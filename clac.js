@@ -19,14 +19,23 @@ let secondNum;
 
 let display = document.querySelector('.display');
 let btn = document.querySelector('#btnNum');
+let equal = document.querySelector('.equal');
+let clear = document.querySelector('.clear');
 for(let i = 0 ; i < 1 ; i++){
-
  btn.addEventListener('click', (e) => {
     let x = document.createElement('p');
     x.textContent = e.target.id;
-    display.appendChild(x);
+    if(e.target.id != '=' && e.target.id != 'btnNum'){
+        display.appendChild(x);
+
+    }
+
    });
 }
+clear.addEventListener('click' , () => {
+    display.innerHTML = '';
+
+})
  
 
 function operate(a , b , operator){
