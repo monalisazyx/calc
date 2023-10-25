@@ -17,6 +17,7 @@ let operator;
 let firstNum;
 let secondNum;
 
+let output = document.querySelector('.output');
 let display = document.querySelector('.display');
 let btn = document.querySelector('#btnNum');
 let equal = document.querySelector('.equal');
@@ -26,17 +27,52 @@ for(let i = 0 ; i < 1 ; i++){
     let x = document.createElement('p');
     x.textContent = e.target.id;
     if(e.target.id != '=' && e.target.id != 'btnNum'){
-        display.appendChild(x);
+        output.appendChild(x);
 
     }
 
    });
-}
+};
 clear.addEventListener('click' , () => {
-    display.innerHTML = '';
+    output.innerHTML = '';
 
+});
+
+
+equal.addEventListener('click', () => {
+    let t = output.textContent;
+    //let arr = t.split(/[+\-\x\/]/);
+    let arr = t.match(/(\d+|[+\-x/])/g);
+    let total = 0;
+
+    for(let i = 0; i < arr.length ; i++){
+        operator = arr[1];
+        firstNum = arr[0];
+        secondNum = arr[2];
+        total = operate(+firstNum , +secondNum , operator);
+        arr.splice(0 , 3 , total);
+        
+        
+    }
+    output.textContent = total;
+    
+
+
+    
 })
- 
+
+
+
+   
+  
+        
+    
+
+   
+
+
+
+
 
 function operate(a , b , operator){
 
@@ -45,7 +81,7 @@ function operate(a , b , operator){
             return add(a , b);
         case '-':
             return subtract(a , b);
-        case '*':
+        case 'x':
             return multiply(a , b);
         case '/':
             return divide(a , b);
