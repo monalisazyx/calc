@@ -56,16 +56,21 @@ button , .output , .big{
 
 }
 .operate {
-    background-color:  rgb(243, 103, 145)/*#f05b47*/;
+    background-color:  rgb(243, 103, 145);
 }
 
 .up button{
-    background-color: #fa8b7c;
+    background-color: #f1a89f;
 
 }
-button:hover{
-    background-color: #b9dbd9;
+.number:hover{
+    background-color: #f5570e;
 }
 .number , .operate {
     font-size: 25px;
+}
+.operate:hover{
+    background-color: #f832ac;
+}.up button:hover{
+    background-color: #f84949;
 }
