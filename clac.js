@@ -56,26 +56,33 @@ equal.addEventListener('click', () => {
         operator = arr[1];
         firstNum = arr[0];
         secondNum = arr[2];
+        
         total = operate(+firstNum , +secondNum , operator);
         arr.splice(0 , 3 , total);
         
         
     }
-    output.textContent = total;
+    if(!Number.isInteger(total)  && total.toString().length > 5){
+        output.textContent = total.toFixed(5);
+    }
+    else{
+        output.textContent = total;
+
+
+    }
     
 
 
     
-})
+});
 
 del.addEventListener('click', () => {
     let x = output.textContent;
-    let arr = x.match(/(\d+|[+\-x/])/g);
-
+    let arr = x.split('');
     arr.pop();  //removes the last element and modifies array
 
-    output.textContent = arr.join(' ');  //updates display 
-})
+    output.textContent = arr.join('');  //updates display 
+});
 
 
 
