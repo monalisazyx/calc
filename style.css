@@ -1,4 +1,71 @@
+
+
 .output {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 2px;
+    background-color:  #f8d497;
+    height: 10vh;
+    width: 29vw;
+    border-radius: 3px;
+    margin: 10px;
+    font-size: 25px;
+    padding-right:10px;
+}
+
+.big{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    width: 32vw;
+    background-color: #73dfd7;
+    border-radius: 3px;
+}
+#btnNum {
+    height: 40px;
+    width: 30vw;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+button {
+    font-size: larger;
+    height: 12vh;
+    width: 7vw;
+    border-radius: 100px;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button , .output , .big{
+    border: 3px solid #22201c;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+
+
+}
+.number {
+    background-color: #fa8e6e;
+
+}
+.operate {
+    background-color:  rgb(243, 103, 145)/*#f05b47*/;
+}
+
+.up button{
+    background-color: #fa8b7c;
+
+}
+button:hover{
+    background-color: #b9dbd9;
+}
+.number , .operate {
+    font-size: 25px;
 }

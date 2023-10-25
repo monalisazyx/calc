@@ -74,7 +74,7 @@ del.addEventListener('click', () => {
 
     arr.pop();  //removes the last element and modifies array
 
-    output.textContent = arr.join('');  //updates display 
+    output.textContent = arr.join(' ');  //updates display 
 })
 
 
