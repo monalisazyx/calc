@@ -1,3 +1,5 @@
+
+
 function add(a ,b ){
     return a + b;
 }
@@ -17,11 +19,16 @@ let operator;
 let firstNum;
 let secondNum;
 
+
 let output = document.querySelector('.output');
 let display = document.querySelector('.display');
 let btn = document.querySelector('#btnNum');
 let equal = document.querySelector('.equal');
 let clear = document.querySelector('.clear');
+let del = document.querySelector('.delete');
+
+
+
 for(let i = 0 ; i < 1 ; i++){
  btn.addEventListener('click', (e) => {
     let x = document.createElement('p');
@@ -41,8 +48,8 @@ clear.addEventListener('click' , () => {
 
 equal.addEventListener('click', () => {
     let t = output.textContent;
-    //let arr = t.split(/[+\-\x\/]/);
     let arr = t.match(/(\d+|[+\-x/])/g);
+    
     let total = 0;
 
     for(let i = 0; i < arr.length ; i++){
@@ -60,6 +67,16 @@ equal.addEventListener('click', () => {
 
     
 })
+
+del.addEventListener('click', () => {
+    let x = output.textContent;
+    let arr = x.match(/(\d+|[+\-x/])/g);
+
+    arr.pop();  //removes the last element and modifies array
+
+    output.textContent = arr.join('');  //updates display 
+})
+
 
 
 
